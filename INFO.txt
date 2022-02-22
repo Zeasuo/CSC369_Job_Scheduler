@@ -1,0 +1,13 @@
+Gongzhi Wang
+wanggon4
+
+Discussion:
+Assuming jobs keep being submitted by users, starvation can happen when
+a job is asking for a resource that is locked by another job for a long time.
+For example, job A only needs resource A to execute, and job B needs all the resources
+to be executed. Assume job B gets put into its corresponding execution thread 
+before job A and locked resource A. Now if job B need to waited for a long time to get other
+resources required, then job A will be waiting for the same amount of time as Job B.
+But ideally, Job A only need to one resource. In this case, Job B is causing starvation.
+
+
